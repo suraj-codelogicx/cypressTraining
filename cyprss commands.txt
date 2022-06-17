@@ -1,0 +1,38 @@
+cypress
+
+install node set path
+
+install vs code
+
+mkdir cypress folder
+
+npm init -y 
+
+npm install cypress --save-dev cypress@9.7.0
+node_modules/.bin/cypress open
+
+if failed to run cypress run in powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+
+and press y
+
+
+-----------------------------------------------------------------------
+
+npx cypress open
+demo site
+https://rahulshettyacademy.com/seleniumPractise/#/
+
+cypress supports css selectors only
+
+#idname
+
+.search-keyword
+
+input[type='search']
+
+form input
+
+code complete
+
+/// <reference types="Cypress" />
