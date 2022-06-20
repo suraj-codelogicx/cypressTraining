@@ -16,7 +16,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 and press y
 
-
+completed till section 8 udemy
 -----------------------------------------------------------------------
 
 npx cypress open
@@ -36,3 +36,17 @@ form input
 code complete
 
 /// <reference types="Cypress" />
+
+----------------------------------------------------------------------------------------------
+
+behaviours be.
+
+proprties have.
+
+assertions
+------------------------------------------------------------------------------------------------------
+npm install -D cypress-iframe
+
+/// <reference types="Cypress-iframe" />
+
+
