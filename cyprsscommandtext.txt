@@ -16,7 +16,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 and press y
 
-completed till section 8 udemy
+completed till section 11 udemy first video
 -----------------------------------------------------------------------
 
 npx cypress open

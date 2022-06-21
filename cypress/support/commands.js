@@ -7,7 +7,21 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
+
+Cypress.Commands.add('selectProducts', function(productName){ 
+
+    cy.get('h4.card-title').each(($el, index, $list) =>{
+
+        if($el.text().includes(productName)){
+    
+            cy.get('button.btn.btn-info').eq(index).click()
+        }
+    
+    })
+
+ })
+
+
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
