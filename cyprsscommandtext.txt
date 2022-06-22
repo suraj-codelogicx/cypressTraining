@@ -16,7 +16,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 and press y
 
-completed till section 11 udemy first video
+completed till section 13 udemy first video
 -----------------------------------------------------------------------
 
 npx cypress open
@@ -48,5 +48,39 @@ assertions
 npm install -D cypress-iframe
 
 /// <reference types="Cypress-iframe" />
+----------------------------------------------------------------------------------------------
+run all test case
+node_modules/.bin/cypress run  --headed
+run specific test
+node_modules/.bin/cypress run --spec  cypress/integration/2-advanced-examples/test7.js --headed
+--------------------------------------------------------------------------------------
+command line environmental url change
+
+node_modules/.bin/cypress run --spec  cypress\integration\2-advanced-examples\Test7.js  --env url=https://google.com --headed
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+recordings
+ node_modules/.bin/cypress run --record --key 9ec4e101-ee3a-4d1a-8b7f-6aa25c5fdc14  
+
+----------------------------------------------------------------------------------------
+
+npm install --save-dev mochawesome
+
+npm install --save-dev mocha
+
+node_modules/.bin/cypress run --reporter mochawesome
+------------------------------------------------------------------------------------
+jemkins.war download
+
+navigate to directory 
+java -jar jenkins.war --enable-future-java --httpPort=9090
+if it is not supported
+java -jar jenkins.war --enable-future-java
+73d05963b6c84336a8730f9a184abd78
+This may also be found at: C:\Users\admin\.jenkins\secrets\initialAdminPassword
+username abby 
+password abby
+localhost:9090
 
 

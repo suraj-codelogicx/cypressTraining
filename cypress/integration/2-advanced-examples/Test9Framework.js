@@ -1,11 +1,11 @@
 /// <reference types="Cypress" />
 
-import HomePage from '../pageObjects/HomePage';
+import HomePage from '../../support/pageObjects/HomePage';
 
-import ProductPage from '../pageObjects/ProductPage';
+import ProductPage from '../../support/pageObjects/ProductPage';
 
 
-describe('My First Test Suite', function(){
+describe('My ninth Test Suite', function(){
 
     before(function() {
 
@@ -17,12 +17,12 @@ describe('My First Test Suite', function(){
 
       })
 
-    it('My First Test Case', function(){
+    it('My ninth Test Case', function(){
 
         const homePage = new HomePage()
         const productPage = new ProductPage()
 
-        cy.visit('https://rahulshettyacademy.com/angularpractice/')
+        cy.visit(Cypress.env('url'))
 
 
         homePage.getEditBox().type(this.data.name)
@@ -45,6 +45,30 @@ describe('My First Test Suite', function(){
         });
 
         productPage.checkoutButton().click()
+
+        var sum = 0
+
+        cy.get('tr td:nth-child(4) strong').each(($el, index, $list) =>{
+
+          const amount = $el.text()
+          var res =amount.split(" ")
+          res = res[1].trim()
+          sum = Number(sum)+Number(res)
+         
+
+        }).then(()=>{
+          cy.log(sum)
+        })
+        cy.get('h3 strong').then(($element)=>{
+
+          const amount2 = $element.text()
+          var res =amount2.split(" ")
+          var total = res[1].trim()
+
+          expect(Number(total)).to.equal(sum)
+
+
+        })
 
         cy.contains('Checkout').click()
 

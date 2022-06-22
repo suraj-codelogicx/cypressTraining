@@ -3,10 +3,10 @@
 
 import 'cypress-iframe'
 
-describe('My First Test Suite', function(){
+describe('My secondlast Test Suite', function(){
 
 
-    it('My First Test Case', function(){
+    it('My secondlast test Case', function(){
 
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
