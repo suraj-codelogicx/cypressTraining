@@ -83,4 +83,6 @@ username abby
 password abby
 localhost:9090
 
+java -jar jenkins.war --httpPort=9090
+
 
