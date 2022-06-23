@@ -85,4 +85,33 @@ localhost:9090
 
 java -jar jenkins.war --httpPort=9090
 
+C:\Windows\system32\cmd.exe
+
+This happens because Jenkins is not aware about the shell path.
+In Manage Jenkins -> Configure System -> Shell, set the shell path as
+
+C:\Windows\system32\cmd.exe
+-------------------------------------------------------------------------------------------------------------------------------
+npm install --save-dev cypress-cucumber-preprocessor  
+
+paste the code plugin index.js file
+
+const cucumber = require('cypress-cucumber-preprocessor').default 
+
+module.exports = (on, config) => {
+
+  on('file:preprocessor', cucumber())
+
+}
+cypress.json> write this
+  "testFiles": "**/*.feature",
+
+package.json>
+"cypress-cucumber-preprocessor": {"nonGlobalStepDefinitions": true}
+
+node_modules/.bin/cypress run --spec cypress\integration\2-advanced-examples\BDD\ecommerce.feature --headed 
+
+npx cypress-tags run -e TAGS="@smoke" --headed
+
+npm install multiple-cucumber-html-reporter --save-dev
 

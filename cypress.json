@@ -1,5 +1,5 @@
 {
-  "defaultCommandTimeout": 8000,
+  "defaultCommandTimeout": 30000,
   "reporter": "mochawesome",
   "env": {
     "url": "https://rahulshettyacademy.com/angularpractice/"
