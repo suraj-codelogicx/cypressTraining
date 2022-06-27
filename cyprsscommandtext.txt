@@ -16,7 +16,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 and press y
 
-completed till section 13 udemy first video
+completed till section 15 udemy first video
 -----------------------------------------------------------------------
 
 npx cypress open
@@ -114,4 +114,6 @@ node_modules/.bin/cypress run --spec cypress\integration\2-advanced-examples\BDD
 npx cypress-tags run -e TAGS="@smoke" --headed
 
 npm install multiple-cucumber-html-reporter --save-dev
-
+-----------------------------------------------------------------------------------------
+api testing
+https://docs.cypress.io/api/commands/request#Syntax
