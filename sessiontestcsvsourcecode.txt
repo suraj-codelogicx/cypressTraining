@@ -1,0 +1,67 @@
+/// <reference types="cypress" />
+//const neatCSV = require('neat-csv')
+import neatCSV from 'neat-csv';
+let productName
+describe('JWT Session', () => {
+  it('is logged in through local storage', async() => {
+
+    cy.LoginAPI().then(function()
+    {
+        cy.visit("https://rahulshettyacademy.com/client",
+        {
+            onBeforeLoad :function(window)
+            {
+                window.localStorage.setItem('token',Cypress.env('token'))
+            }
+
+        })       
+
+    })
+    cy.get(".card-body b").eq(1).then(function(ele)
+      {
+      productName =  ele.text();
+      })
+    cy.get(".card-body button:last-of-type").eq(1).click();
+    cy.get("[routerlink*='cart']").click();
+    cy.contains("Checkout").click();
+    cy.get("[placeholder*='Country']").type("ind")
+    cy.get('.ta-results button').each(($e1, index, $list) => {
+
+      if($e1.text()===" India")
+      {
+          cy.wrap($e1).click()
+      }
+  })
+    cy.get(".action__submit").click();
+    cy.wait(2000)
+    cy.get(".order-summary button").click();
+    
+  cy.readFile(Cypress.config("fileServerFolder")+"/cypress/downloads/order-invoice_rahul.csv")
+  .then(async(text)=>
+  {
+    const csv =  await neatCSV(text)
+    console.log(csv)
+    const actualProductCSV = csv[0]["Product Name"]
+    expect(productName).to.equal(actualProductCSV)
+
+  
+  })
+ 
+
+
+
+
+
+
+
+
+
+
+  })
+  })
+
+
+abbypra28@gmail.com
+MjyVYjBNm9@w5u4
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJhZDBiMmUyNmI3ZTFhMTBlZjA2YjUiLCJ1c2VyRW1haWwiOiJhYmJ5cHJhMjhAZ21haWwuY29tIiwidXNlck1vYmlsZSI6ODc3NzgzOTQ3OCwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTY1NjQxMDM3OSwiZXhwIjoxNjg3OTY3OTc5fQ.F_90zDGftnZQEsQdf6PIBf8DrKkU6ifFRtJTZzZG6Co

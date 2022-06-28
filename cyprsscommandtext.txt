@@ -117,3 +117,9 @@ npm install multiple-cucumber-html-reporter --save-dev
 -----------------------------------------------------------------------------------------
 api testing
 https://docs.cypress.io/api/commands/request#Syntax
+------------------------------------------------------------------------------------------
+jwt authentication
+
+token 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJhZDBiMmUyNmI3ZTFhMTBlZjA2YjUiLCJ1c2VyRW1haWwiOiJhYmJ5cHJhMjhAZ21haWwuY29tIiwidXNlck1vYmlsZSI6ODc3NzgzOTQ3OCwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTY1NjQxMDM3OSwiZXhwIjoxNjg3OTY3OTc5fQ.F_90zDGftnZQEsQdf6PIBf8DrKkU6ifFRtJTZzZG6Co
+------------------------------------------------------------------------------------------------------------
