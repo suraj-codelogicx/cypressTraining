@@ -9,7 +9,17 @@
     
     "runMode": 1
     
-    
-  }
+  },
+  "db": {
+    "userName": "root",
+    "password": "123",
+    "server": "localhost",
+    "options": {
+        "database": "test",
+        "encrypt": true,
+        "rowCollectionOnRequestCompletion" : true
+    }
+}
+  
 
 }

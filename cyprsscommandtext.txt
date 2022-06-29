@@ -123,3 +123,41 @@ jwt authentication
 token 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJhZDBiMmUyNmI3ZTFhMTBlZjA2YjUiLCJ1c2VyRW1haWwiOiJhYmJ5cHJhMjhAZ21haWwuY29tIiwidXNlck1vYmlsZSI6ODc3NzgzOTQ3OCwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTY1NjQxMDM3OSwiZXhwIjoxNjg3OTY3OTc5fQ.F_90zDGftnZQEsQdf6PIBf8DrKkU6ifFRtJTZzZG6Co
 ------------------------------------------------------------------------------------------------------------
+check github first and match with dummy code
+npm install --save-dev cypress-sql-server
+
+
+The plug-in can be initialised in your cypress/plugins/index.js file as below.
+
+const sqlServer = require('cypress-sql-server');
+
+module.exports = (on, config) => {
+  tasks = sqlServer.loadDBPlugin(config.db);
+  on('task', tasks);
+}
+
+
+step2
+
+support/index.js file.
+
+import sqlServer from 'cypress-sql-server';
+sqlServer.loadDBCommands();
+
+step 3
+
+"db": {
+    "userName": "",
+    "password": "",
+    "server": "",
+    "options": {
+        "database": "",
+        "encrypt": true,
+        "rowCollectionOnRequestCompletion" : true
+    }
+}
+
+------------------------------------------------------------------------------------------------------
+
+INSERT INTO persons (PersonID, LastName, FirstName, Address, City)
+VALUES ('0', 'Tom B. Erichsen', 'Skagen 21', 'kolkata', 'Norway');
